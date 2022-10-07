@@ -1,13 +1,20 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+import excuteQuery from '../../../lib/db'
+
 export default function handler(req, res) {
   const { method } = req;
 
-  const GetAll = () => {
-    res.status(200).json({ name: "GET John Doe" })
+  const GetAll = async () => {
+    const results = await excuteQuery({
+      query: 'SELECT * FROM hello;',
+      values: '',
+    })
+
+    res.status(200).json(results)
   }
 
-  const Post = () => {
+  const Post = async () => {
     res.status(200).json({ name: "POST John Doe" })
   }
 

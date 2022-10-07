@@ -3,15 +3,15 @@
 export default function handler(req, res) {
   const { query: { id }, method } = req;
 
-  const GetOne = () => {
+  const GetOne = async () => {
     res.status(200).json({ name: "GET ONE John Doe : " + id })
   }
 
-  const Update = () => {
+  const Update = async () => {
     res.status(200).json({ name: "PUT John Doe : " + id })
   }
 
-  const Destroy = () => {
+  const Destroy = async () => {
     res.status(200).json({ name: "DELETE John Doe : " + id })
   }
 
