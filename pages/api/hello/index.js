@@ -7,8 +7,8 @@ export default function handler(req, res) {
 
   const GetAll = async () => {
     const results = await excuteQuery({
-      query: 'SELECT * FROM hello;',
-      values: [],
+      query: 'INSERT INTO hello (name) VALUES(?)',
+      values: ['natto'],
     })
 
     res.status(200).json(results)
